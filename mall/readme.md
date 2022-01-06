@@ -21,3 +21,42 @@
         koa 
     2. scroll
     3. 写组件 切页面 
+
+- 三元页面模板
+    ```
+    import React from 'react';
+// import './Server.style.js'
+import { connect } from 'react-redux'
+import Scroll from '../../baseUI/scroll'
+
+const Server = (props) => {
+    const { category } = props
+
+    return (
+        <>
+            <Scroll
+                direction="vertical"
+                refresh={false}
+            >
+                <div>
+                    Server
+                </div>
+            </Scroll>
+        </>
+    )
+}
+
+const mapStateToProps = (state) => {
+    return {
+        category: state.server.category
+    }
+}
+export default connect(mapStateToProps, {})(Server)
+    ```
+
+- swiper 组件打理流程
+    1. 安装相应版本的swiper
+    2. 引入swiper 及样式
+    3. 固定的html 结构 .swiper-container > (.swiper-wrapper >
+        .swiper-item) + .swiper-pagination
+    4. useEffect 实例化Swiper 

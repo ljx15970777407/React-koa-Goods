@@ -1,9 +1,10 @@
 // 不做mysql , json
-const fs = require('fs')
+// const fs = require('fs')
 const Koa = require('koa')
 const router = require('koa-router')();
 const app = new Koa()
 const MainData = require('./Data/mainData/MainData.json')
+const ServerData = require('./Data/serverData/ServerData.json')
 const cors = require('koa2-cors')
 app.use(cors({
     origin: function(ctx) { //设置允许来自指定域名请求
@@ -24,6 +25,14 @@ router.get('/home/main', async (ctx) => {
         data: MainData
     }
 })
+
+router.get('/home/server', async (ctx) => {
+    ctx.body = {
+        success: true,
+        data: ServerData
+    }
+})
+
 app
     .use(router.routes())
     .use(router.allowedMethods())
