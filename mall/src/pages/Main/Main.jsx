@@ -7,13 +7,17 @@ import Classify from
     '../../components/main/classify/Classify.jsx'
 import RotationChart from 
     '../../components/main/rotationChart/RotationChart.jsx'
+import MenuBar from 
+    '../../components/main/menuBar/MenuBar.jsx'
+import ImgList from 
+    '../../components/main/imgList/ImgList.jsx'
 
 const Main = (props) => {
     // 状态
     const { maindata } = props
     // action 
     const { getMainDataDispatch } = props
-    const { classify=[], rotationImg=[] } = maindata
+    const { classify=[], rotationImg=[], menuBarData={} } = maindata
 
     // console.log(maindata, '////////////');
     useEffect(() => {
@@ -30,6 +34,8 @@ const Main = (props) => {
                 <div className='main-padding'>
                     <Classify classify={classify}/>
                     <RotationChart rotationImg={rotationImg}/>
+                    <MenuBar menuBarData={menuBarData}/>
+                    <ImgList />
                 </div>
             </Scroll>
         </div>

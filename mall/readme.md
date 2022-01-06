@@ -60,3 +60,15 @@ export default connect(mapStateToProps, {})(Server)
     3. 固定的html 结构 .swiper-container > (.swiper-wrapper >
         .swiper-item) + .swiper-pagination
     4. useEffect 实例化Swiper 
+
+- 电商menubar
+    1. swiper 提供了swiper-bar 这种形式
+    2. 使用容器组合组件
+        menubar swiper
+        menubarItem 菜单
+    3. flex 每行交给复用组件
+    4. 数据设计很穷秒
+
+- 金蝉脱壳
+    1. 把不想展示的功能直接截图 放到assets目录下
+    2. 切页面组件
