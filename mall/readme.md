@@ -67,7 +67,7 @@ export default connect(mapStateToProps, {})(Server)
         menubar swiper
         menubarItem 菜单
     3. flex 每行交给复用组件
-    4. 数据设计很穷秒
+    4. 数据设计很奇妙
 
 - 金蝉脱壳
     1. 把不想展示的功能直接截图 放到assets目录下
