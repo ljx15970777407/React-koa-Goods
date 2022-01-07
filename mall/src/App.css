@@ -23,6 +23,10 @@ a {
   color: #333333;
 }
 
+ul, li {
+  list-style: none;
+}
+
 body,
 ul,
 ol,

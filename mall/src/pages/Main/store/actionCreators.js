@@ -10,6 +10,22 @@ export const changeMainData = (data) => {
     }
 }
 
+export const setNum = (data) => {
+    // console.log("进去成功...............");
+    return {
+        type: actionType.SET_NUM,
+        data: data
+    }
+}
+
+export const setIndex = (data) => {
+    // console.log("进去成功...............");
+    return {
+        type: actionType.SET_INDEX,
+        data: data
+    }
+}
+
 export const getMainData = () => {
     // api 请求 
     // dispatch一个同步任务
@@ -24,3 +40,4 @@ export const getMainData = () => {
             })
     }
 }
+

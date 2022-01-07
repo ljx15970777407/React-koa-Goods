@@ -1,10 +1,9 @@
-import React, {memo} from 'react';
-// import './Server.style.js'
+import React, {memo} from 'react'
 import { connect } from 'react-redux'
-import Scroll from '../../baseUI/scroll'
+import Scroll from '../../baseUI/scroll/index'
 
-const Server = (props) => {
-    const { category } = props
+const Info = (props) => {
+    const {  } = props
 
     return (
         <>
@@ -13,8 +12,9 @@ const Server = (props) => {
                 refresh={false}
             >
                 <div>
-                    Server
+                    Info
                 </div>
+            
             </Scroll>
         </>
     )
@@ -22,7 +22,6 @@ const Server = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        category: state.server.category
     }
 }
-export default connect(mapStateToProps, {})(memo(Server))
+export default connect(mapStateToProps, {})(memo(Info))
