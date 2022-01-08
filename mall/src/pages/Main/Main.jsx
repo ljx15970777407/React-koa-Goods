@@ -4,21 +4,21 @@ import Scroll from '../../baseUI/scroll'
 import './Main.css'
 import { connect } from 'react-redux'
 import * as actionTypes from './store/actionCreators'
-import Classify from 
+import Classify from
     '../../components/main/classify/Classify.jsx'
-import RotationChart from 
+import RotationChart from
     '../../components/main/rotationChart/RotationChart.jsx'
-import MenuBar from 
+import MenuBar from
     '../../components/main/menuBar/MenuBar.jsx'
-import ImgList from 
+import ImgList from
     '../../components/main/imgList/ImgList.jsx'
-import SearchInput from 
+import SearchInput from
     '../../components/SearchInput/SearchInput.jsx'
-import MainPopup from 
+import MainPopup from
     '../../components/mainPopup/MainPopup.jsx'
-import HomeService from 
+import HomeService from
     '@/components/main/homeService/HomeService.jsx'
-import FrameLayout from 
+import FrameLayout from
     '../../components/main/frameLayout/FrameLayout.jsx'
 
 const Main = (props) => {
@@ -29,13 +29,13 @@ const Main = (props) => {
     const { maindata } = props
     // action 
     const { getMainDataDispatch } = props
-    const { classify=[], rotationImg=[], menuBarData={} } = maindata
+    const { classify = [], rotationImg = [], menuBarData = {} } = maindata
     // console.log(maindata, '////////////');
     useEffect(() => {
-        if(!maindata.length) {
+        if (!maindata.length) {
             getMainDataDispatch()
         }
-    },[])
+    }, [])
     const handleOnclick = () => {
         // popun 组件的显示已否
         setShowPopup(!showPopup)
@@ -44,7 +44,7 @@ const Main = (props) => {
     const handlePullUp = () => {
         // console.log('上拉加载更多');
     }
-    
+
     const handlePullDown = () => {
         // console.log('下拉刷新');
     }
@@ -52,7 +52,7 @@ const Main = (props) => {
     return (
         <div className='main'>
             <SearchInput
-                handleOnclick={() => {handleOnclick()}}
+                handleOnclick={() => { handleOnclick() }}
                 searchBoxHandleOnclick={() => history.push('/search')}
             />
             <Scroll
@@ -61,7 +61,7 @@ const Main = (props) => {
                 onScroll={
                     (e) => {
                         // console.log(e.y);
-                        if(e.y < -1142) {
+                        if (e.y < -1142) {
                             setDisplay(true)
                         } else {
                             setDisplay(false)
@@ -72,17 +72,17 @@ const Main = (props) => {
                 pullDown={handlePullDown}
             >
                 <div className='main-padding'>
-                    <Classify classify={classify}/>
-                    <RotationChart rotationImg={rotationImg}/>
-                    <MenuBar menuBarData={menuBarData}/>
+                    <Classify classify={classify} />
+                    <RotationChart rotationImg={rotationImg} />
+                    <MenuBar menuBarData={menuBarData} />
                     <ImgList />
                     <HomeService />
                     <FrameLayout />
                 </div>
             </Scroll>
-            <MainPopup 
-                handleOnclick={ handleOnclick }
-                display={showPopup}/>
+            <MainPopup
+                handleOnclick={handleOnclick}
+                display={showPopup} />
         </div>
     )
 }
@@ -90,7 +90,7 @@ const Main = (props) => {
 const mapStateToDispatch = (dispatch) => {
     return {
         getMainDataDispatch() {
-          
+
             dispatch(actionTypes.getMainData())
         }
     }
