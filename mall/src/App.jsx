@@ -11,9 +11,9 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <HashRouter>
+        <BrowserRouter>
           {renderRoutes(routes)}
-        </HashRouter>
+        </BrowserRouter>
       </div>
     </Provider>
   )

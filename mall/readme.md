@@ -147,3 +147,15 @@ export default connect(mapStateToProps, {})(Server)
     4. 一方面是各司其职， 性能优化
         热更新 
     5. 父子之间不用redux，用传值和回调 
+
+- browserRouter hashRouter 在本地调试
+    当url直接访问时没有bug
+    
+    server ip -> www 80 3000 
+    root /var/www/mall/dist 
+    / index.html bundle.js  browserRouter
+
+    /home/main -> nginx 
+    /home? 404 
+
+    
