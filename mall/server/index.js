@@ -6,6 +6,9 @@ const app = new Koa()
 const MainData = require('./Data/mainData/MainData.json')
 const ServerData = require('./Data/serverData/ServerData.json')
 const cors = require('koa2-cors')
+const Mock = require('mockjs')
+const Random = Mock.Random
+
 app.use(cors({
     origin: function(ctx) { //设置允许来自指定域名请求
         // if (ctx.url === '/test') {
@@ -30,6 +33,29 @@ router.get('/home/server', async (ctx) => {
     ctx.body = {
         success: true,
         data: ServerData
+    }
+})
+
+router.get('/home/list', async (ctx) => {
+    // 参数 limit page 
+    let { limit = 20, page = 1 } = ctx.request.query
+    // console.log(limit, page, '---------------------');
+    // http://localhost:9090/home/list?limit=20&page=1
+    // qs  /detail/:123 
+    // to be continue 根据limit 和page 做数据筛选 
+
+    let data = Mock.mock({
+        'list|20': [{
+            "id": '@increment',
+            'title': '@ctitle(15, 20)',
+            'label': '@ctitle(3, 5)',
+            'imgsrc': Random.image('94x107')
+        }]
+    })
+
+    ctx.body = {
+        success: true,
+        data
     }
 })
 

@@ -158,4 +158,16 @@ export default connect(mapStateToProps, {})(Server)
     /home/main -> nginx 
     /home? 404 
 
+- 首页长列表业务怎么做
+    1. 后端从 ctx.request.query 中解析出来 {limit=20, page=1}
+    2. mockjs Mock.mock 20
+    3. 页面可以用redux(数据流处理的一致性) 或useState(信仰) mvvm 
+    4. 列表图片的性能优化
+        react-lazyload
+        包装img placeholder
+    5. betterscroll scroll onScroll 
+        react-laztload forceCheck 
+        
+
+
     

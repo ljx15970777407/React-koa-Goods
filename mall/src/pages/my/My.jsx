@@ -12,7 +12,7 @@ const My = (props) => {
                 refresh={false}
             >
                 <div>
-                    My
+                My
                 </div>
             
             </Scroll>
@@ -20,7 +20,7 @@ const My = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) =>　{
     return {
     }
 }

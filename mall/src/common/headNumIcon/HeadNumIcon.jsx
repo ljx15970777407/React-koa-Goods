@@ -22,8 +22,8 @@ const HeadNumIcon=(porps)=>{
 
     const {top,bottom,left,right,num}=porps;
     let display="none";
-    if(num>0) display= ""
-
+    if (num > 0) display= "";
+    
     return(
         <Icon style={{display:`${display}` , top:`${top}` ,bottom:`${bottom}` , left:`${left}` ,right:`${right}` }}>
             <span>{num}</span>

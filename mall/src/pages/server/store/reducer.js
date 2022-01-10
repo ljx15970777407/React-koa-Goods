@@ -1,5 +1,4 @@
 // import * as actionTypes from './constants';
-
 const defaultstate = {
     category: []
 }

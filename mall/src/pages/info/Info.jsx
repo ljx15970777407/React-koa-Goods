@@ -1,4 +1,4 @@
-import React, {memo} from 'react'
+import React, { memo } from 'react'
 import { connect } from 'react-redux'
 import Scroll from '../../baseUI/scroll/index'
 
@@ -20,7 +20,7 @@ const Info = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) =>　{
     return {
     }
 }

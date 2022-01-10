@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { reducer as mainReducer } from '../pages/Main/store/index'
-import { reducer as serverReducer } from '../pages/server/store/index.js'
+import { reducer as serverReducer } from '../pages/server/store/index'
+
 
 
 

@@ -40,5 +40,4 @@ function MenuBar(props) {
     )
 }
 
-
 export default MenuBar

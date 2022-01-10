@@ -139,5 +139,4 @@ export const More = styled.div `
         & .more-right__text{
             margin-top: .2315rem /* 25/108 */;
         } 
-
 `

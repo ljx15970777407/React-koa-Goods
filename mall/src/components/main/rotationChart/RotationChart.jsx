@@ -9,7 +9,7 @@ const RotationChart = (props) => {
         setTimeout(() => {
             new Swiper('.swiper-container', {
                 loop: true,
-                autoplay: {
+                autoplay:{
                     delay: 1000
                 },
                 pagination: {
@@ -18,8 +18,8 @@ const RotationChart = (props) => {
                     clickable: true
                 }
             })
-        }, 200)
-    },[])
+        }, 100)
+    }, [])
     return (
         <div className="rotation-box">
             <div className="swiper-container">
@@ -31,7 +31,8 @@ const RotationChart = (props) => {
                             key={index}
                             className="swiper-slide">
                                 <a href={item.linkUrl}>
-                                    <img className='rotationChart-img' src={item.picUrl} alt="" />
+                                    <img className="rotationChart-img"
+                                     src={item.picUrl} alt="" />
                                 </a>
                             </div>
                         )
@@ -40,7 +41,6 @@ const RotationChart = (props) => {
                 </div>
                 <div className="swiper-pagination"></div>
             </div>
-            
         </div>
     )
 }

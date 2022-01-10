@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import { renderRoutes } from 'react-router-config';
 import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router';
 import './bottom.css';
 import { connect } from 'react-redux';
 import HeadNumIcon from '../../common/headNumIcon/HeadNumIcon';
@@ -9,12 +9,11 @@ import { actionCreators } from '../../pages/Main/store';
 
 const Bottom = (props) => {
     let { route, num, index } = props;
-    const { pathname } = useLocation();
+    const { pathname}  = useLocation()
+    // 根据用户直接访问的处理, 非首页
+    index = route.routes.findIndex(
+            item => item.path == pathname) - 1
 
-    // console.log(path, '///////')
-    // 根据用户直接访问的处理 非首页
-    index = route.routes.findIndex(item => item.path == pathname) - 1;
-    
     const { setIndexDispatch } = props;
     return (
         <>
@@ -70,7 +69,7 @@ const Bottom = (props) => {
                                 display="" 
                                 top="-0.92rem"
                                 left="1.5rem" 
-                                num={num}/>
+                                num="9"/>
                     </div>
                 </Link>
 
