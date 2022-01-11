@@ -168,6 +168,40 @@ export default connect(mapStateToProps, {})(Server)
     5. betterscroll scroll onScroll 
         react-laztload forceCheck 
         
+- 懂车帝列表页执行方案 
+    1. 数据 视频
+        mockjs 做不了  不支持随机视频
+        video: '死的链接' 
+        node 使用 mockjs 
+    2. item 不一样
+        3张图片
+        video
+    3. 
+        const videos = [
+            'video1',
+            'video2',
+            'video3',
+            'video4'
+        ],
+        [{
+            id: '@increment',
+            title: '@ctitle(5, 10)',
+            desc: '@text(10, 30)',
+            'type1|2': 1,
+            'pics|3': [
+                Random.image('100x100')
+            ],
+            'video': {
+                album: videos[Math.random()],
+                video: 'ffsaf'
+            }
+        }]
 
+    4. list []
+    map
+        if type == 1
+        <ListImage item = {item}/>
+        else
+        <ListVideo item = {item}/>
 
     
