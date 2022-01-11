@@ -1,11 +1,17 @@
-import React, { memo } from 'react'
+import React, { memo, useState } from 'react'
 // import './Server.style.js'
 import { connect } from 'react-redux'
 import Scroll from '../../baseUI/scroll/index'
+import ServerSearchInput from '@/components/server/ServerSearchInput'
+import SererPopup from '@/components/server/serverPopup/ServerPopup'
 
 const Server = (props) => {
     const { category } = props
-
+    const [serverDisplay, setServerDisplay] = useState(false)
+    const handleonclick = () => {
+        // console.log('-------------------------')
+        setServerDisplay(!serverDisplay)
+    }
     return (
         <>
             <Scroll
@@ -13,7 +19,11 @@ const Server = (props) => {
                 refresh={false}
             >
                 <div>
-                    Server
+                    <ServerSearchInput handlenOnclick={handleonclick}/>
+                    <SererPopup 
+                        display={serverDisplay}
+                        handleOnclick={handleonclick}
+                        />
                 </div>
             
             </Scroll>

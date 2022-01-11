@@ -196,7 +196,7 @@ export default connect(mapStateToProps, {})(Server)
                 video: 'ffsaf'
             }
         }]
-
+        
     4. list []
     map
         if type == 1

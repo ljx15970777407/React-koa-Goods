@@ -19,11 +19,14 @@ import FrameLayout from '@/components/main/frameLayout/frameLayout'
 import * as api from '@/api'
 import ListData from '@/components/main/listData/ListData'
 import { forceCheck } from 'react-lazyload'
+import MainBottomChooseCopy from
+    '../../components/main/mainBottomChooseCopy/MainBottomChooseCopy.jsx'
 
 const Main = (props) => {
     // 状态
     let [list, setList] = useState([])
     const [showPopup, setShowPopup] = useState(false)
+    const [menuDisplay, setMenuDisplay] = useState(0)
     const [display, setDisplay] = useState(false)
     const history = useHistory()
     const { maindata } = props
@@ -78,9 +81,9 @@ const Main = (props) => {
                     (e) => {
                         // console.log(e.y)
                         if (e.y < -1142) {
-                            setDisplay(true)
+                            setMenuDisplay(1)
                         } else {
-                            setDisplay(false)
+                            setMenuDisplay(0)
                         }
                         forceCheck()
                     }
@@ -98,6 +101,7 @@ const Main = (props) => {
                     <ListData list={list}/>
                 </div>
             </Scroll>
+            <MainBottomChooseCopy display={menuDisplay} />
             <MainPopup 
                 handleOnclick={ handleOnclick}
                 display={showPopup}/>
