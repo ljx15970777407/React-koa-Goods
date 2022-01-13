@@ -2,6 +2,7 @@ import React, { useEffect, memo } from 'react';
 import { connect } from 'react-redux'
 import * as actions from './store/actionCreators'
 import { useLocation } from 'react-router-dom';
+import HeaderComponent from '../../common/headerComponent/HeaderComponent.jsx'
 
 const Detail = (props) => {
     const { data } = props
@@ -14,8 +15,14 @@ const Detail = (props) => {
             getDetailData(id)
         }
     }, [])
+
+    const handleShare = () => {
+        // to be continue share
+    }
+
     return (
         <>
+            <HeaderComponent title={data.title} handleShare={handleShare}/>
         </>
     )
 }
