@@ -5,6 +5,7 @@ const Main = lazy(()=> import('../pages/Main/Main'));
 const Server = lazy(() => import('../pages/server/Server'))
 const Info = lazy(() => import('../pages/info/Info'))
 const My = lazy(() => import('../pages/my/My'))
+const Detail = lazy(() => import('../pages/details/Detail.jsx'))
 import Tabbuttom from '../components/tabbuttom/Tabbuttom';
 
 const SuspenseComponent = Component => props => {
@@ -49,6 +50,16 @@ export default [{
                     path: '/home/my',
                     component: SuspenseComponent(My),
                 },
+            ]
+        },
+        {
+            path: '/detail',
+            component: SuspenseComponent(Detail),
+            routes: [
+                {
+                    path: "/detail/:id",
+                    component: SuspenseComponent(Detail)
+                }
             ]
         }
     ]

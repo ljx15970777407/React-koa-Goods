@@ -6,7 +6,7 @@ import store from './store/index';
 import { BrowserRouter, HashRouter } from 'react-router-dom';
 import {renderRoutes} from 'react-router-config';
 import routes from './routes/index';
-
+console.log('//////////////////////////')
 function App() {
   return (
     <Provider store={store}>

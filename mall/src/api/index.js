@@ -8,3 +8,7 @@ export const reqmain = () => {
 export const reqlist = (page) => {
     return Ajax('/home/list', { page })
 }
+
+export const reqdetail = (id) => {
+    return Ajax(`/detail/${id}`) 
+}
